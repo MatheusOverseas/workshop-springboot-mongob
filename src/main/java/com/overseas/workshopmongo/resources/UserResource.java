@@ -33,6 +33,12 @@ public class UserResource {
         return ResponseEntity.status(HttpStatus.OK).body(new UserDTO(u));
     }
 
+    @DeleteMapping(value="/{id}")
+    public ResponseEntity<Void> deleteById(@PathVariable String id){
+       userService.delete(id);
+        return ResponseEntity.noContent().build();
+    }
+
     @PostMapping
     public ResponseEntity<Void> insert(@RequestBody UserDTO objDTO){
      User u = userService.fromDTO(objDTO);
