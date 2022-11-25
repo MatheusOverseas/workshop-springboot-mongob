@@ -61,4 +61,5 @@ public class UserResource {
         User u = userService.findById(id);
         return ResponseEntity.status(HttpStatus.OK).body(u.getPosts());
     }
+
  }
